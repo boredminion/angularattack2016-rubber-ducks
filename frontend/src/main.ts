@@ -1,6 +1,7 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {enableProdMode} from '@angular/core';
 import {AppComponent} from './app';
+import 'rxjs/Rx';
 
 //providers
 import {HTTP_PROVIDERS} from '@angular/http';
