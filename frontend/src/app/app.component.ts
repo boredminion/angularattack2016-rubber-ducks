@@ -1,12 +1,15 @@
+///<reference path="../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
 //angular dependencies
 import {Component, OnInit} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
 import '../../public/css/styles.css';
 
+
 //components
 import {LoginComponent} from './components/login/login.component';
-import {SearchResultComponent} from "./components/searchresult/searchresult.component.ts";
+import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
+import {HeaderComponent} from './components/header/header.component';
 
 @Component({
     selector: 'my-app',
@@ -22,12 +25,26 @@ import {SearchResultComponent} from "./components/searchresult/searchresult.comp
         name: 'Login',
         component: LoginComponent,
         useAsDefault: true
-    },{
-        path:'/searchresult',
+    }, {
+        path: '/searchresult',
         name: 'Search Result',
         component: SearchResultComponent
+    },
+    {
+        path: '/header',
+        name: 'Header',
+        component: HeaderComponent
     }
 ])
-export class AppComponent {
+export class AppComponent implements OnInit {
+    constructor(private  router:Router) {
+    }
+
+    ngOnInit() {
+        if (window.location.hash) {
+            let hash = window.location.hash.split('=')[1];
+            window.localStorage.setItem('ducky_access_token', hash);
+        }
+    }
 }
 

@@ -1,8 +1,40 @@
 body {
     color: #fff;
 }
+/*profile page css begins here*/
+.profile-container{
+    background-color: #00aa9a;
+}
+.profile-wrapper {
+    background-color: #00c853;
+}
+.profile-description{
+    background-color: #00acc1;
+}
+.profile-pic{
+    border-radius: 50%;
+    border:1px solid #c4c4c4;
+    height: 150px;
+    margin: 50px auto;
+    width: 150px;
+}
 
-/*Home page*/
+.profile-pic img {
+    height: 150px;
+    vertical-align: middle;
+    width: 150px;
+}
+
+.profile-name{
+    text-align:center;
+}
+
+.profile-name span{
+    display: block;
+}
+/*profile page css ends here*/
+
+/*Sear result page*/
 .home-wrapper {
     width: 100%;
     height: 100%;
