@@ -1,5 +1,203 @@
 body {
-    background: #0147A7;
-    color: #000;
+    color: #fff;
 }
+
+*:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.row{
+    position:relative;
+}
+/*Sear result page*/
+.home-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.home-wrapper p {
+    color: #0000AA;
+}
+
+.main-content {
+    position: relative;
+}
+
+.card {
+    position: relative;
+    display: block;
+    padding: .75em;
+    border: 0;
+}
+
+.card p.user-name {
+    text-align: left;
+    color: #000000;
+    font-weight: bold;
+    line-height: 31px;
+}
+
+.card p.album-name {
+    color: #000000;
+    font-size: large;
+    font-weight: bold;
+}
+
+.card p.user-name img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.card .image-container {
+    background-color: #d3d3d3;
+}
+
+.card:hover {
+    background-color: #2196f3;
+}
+
+.sidebar {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196f3;
+}
+
+ul.sidebar-nav {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.card .image-checked {
+
+}
+
+.sidebar-nav li a {
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    line-height: 30px;
+}
+
+.sidebar-nav li:hover {
+    border-radius: 4%;
+    height: 30px;
+    background-color: #003366;
+}
+
+.sidebar-nav li a span {
+    padding-left: 5px;
+}
+
+.show-more a {
+    text-decoration: none;
+}
+
+.show-more p {
+    margin-bottom: 0;
+    color: #101010;
+}
+
+/*Home page end*/
+
+/*profile page css begins here*/
+
+
+/*profile page css begins here*/
+.profile-wrapper {
+    background-color: #00c853;
+    padding: 10px 0;
+}
+
+.profile-description {
+    padding: 15px 0;
+    width: 100%;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    border: 1px solid #c4c4c4;
+    height: 150px;
+    margin: 50px auto;
+    width: 150px;
+}
+
+.profile-pic img {
+    height: 150px;
+    vertical-align: middle;
+    width: 150px;
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 18px;
+}
+
+.profile-name span {
+    display: block;
+}
+
+.profile-description-wrapper {
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #c4c4c4;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.profile-description-wrapper span {
+    display: block;
+}
+
+.profile-option {
+    float: left;
+}
+
+.description-profile {
+    padding: 20px 0;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+@media (min-width: 768px) {
+    .profile-wrapper {
+        background-color: #00c853;
+        height: 100%;
+        position: fixed;
+        padding:0 60px;
+    }
+
+    .profile-description {
+        float: right;
+        padding: 15px 0;
+        width: 75%;
+    }
+
+    .profile-description-wrapper {
+        margin: 50px;
+        padding: 40px;
+    }
+
+    .card {
+        float: left;
+    }
+
+    .sidebar {
+        display: block;
+    }
+}
+
+
+/*profile page css ends here*/
+
+
+
+
 
