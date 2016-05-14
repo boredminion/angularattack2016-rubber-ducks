@@ -16,7 +16,6 @@ export class AlbumService {
     private userUrl = 'http://bf9d428a.ngrok.io/albums';
 
     fetch():Observable<Album[]> {
-        debugger;
         var url = this.userUrl;
         return this.http.get(url)
             .map(this.extractData)

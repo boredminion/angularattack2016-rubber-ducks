@@ -5,7 +5,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Jsonp, URLSearchParams} from '@angular/http';
 
-import {Album} from  '../models/album';
+import {Album} from  '../models/AlbumModel';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
