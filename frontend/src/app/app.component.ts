@@ -8,6 +8,10 @@ import '../../public/css/styles.css';
 
 //components
 import {LoginComponent} from './components/login/login.component';
+import {SearchTagsComponent} from './components/search/tags/searchTags.component';
+import { JSONP_PROVIDERS }  from '@angular/http';
+//services
+import {UserService} from './services/instagram/UserService';
 import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
 import {HeaderComponent} from './components/header/header.component';
 
@@ -17,7 +21,7 @@ import {HeaderComponent} from './components/header/header.component';
     styles: [require('./app.component.css')],
 
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS]
+    providers: [ROUTER_PROVIDERS,JSONP_PROVIDERS, UserService]
 })
 @RouteConfig([
     {
@@ -37,10 +41,15 @@ import {HeaderComponent} from './components/header/header.component';
         component: ProfileComponent,
     },
     {
+        path: '/search/tags',
+        name: 'SearchByTag',
+        component: SearchTagsComponent
+
+    },
+    {
         path: '/header',
         name: 'Header',
         component: HeaderComponent
-
     }
 ])
 export class AppComponent implements OnInit {
