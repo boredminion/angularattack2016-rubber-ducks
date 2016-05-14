@@ -7,7 +7,6 @@ import '../../public/css/styles.css';
 
 //components
 import {LoginComponent} from './components/login/login.component';
-import {LoginAccessTokenComponent} from './components/login/loginAccessToken.component';
 
 @Component({
     selector: 'my-app',
@@ -23,7 +22,6 @@ import {LoginAccessTokenComponent} from './components/login/loginAccessToken.com
         component: LoginComponent,
         useAsDefault: true
     },
-
 ])
 export class AppComponent implements OnInit{
     constructor ( private  router: Router){}
