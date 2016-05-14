@@ -2,7 +2,7 @@
 //angular dependencies
 import {Component, OnInit} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-
+import {ProfileComponent} from './components/profile.component';
 import '../../public/css/styles.css';
 
 
@@ -31,9 +31,16 @@ import {HeaderComponent} from './components/header/header.component';
         component: SearchResultComponent
     },
     {
+
+        path: '/profile',
+        name: 'Profile',
+        component: ProfileComponent,
+    },
+    {
         path: '/header',
         name: 'Header',
         component: HeaderComponent
+
     }
 ])
 export class AppComponent implements OnInit {
