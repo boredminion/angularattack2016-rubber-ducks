@@ -8,9 +8,10 @@ body {
     clear: both;
 }
 
-.row{
-    position:relative;
+.row {
+    position: relative;
 }
+
 /*Sear result page*/
 .home-wrapper {
     width: 100%;
@@ -107,9 +108,6 @@ ul.sidebar-nav {
 /*Home page end*/
 
 /*profile page css begins here*/
-
-
-/*profile page css begins here*/
 .profile-wrapper {
     background-color: #00c853;
     padding: 10px 0;
@@ -121,10 +119,9 @@ ul.sidebar-nav {
 }
 
 .profile-pic {
-    border-radius: 50%;
-    border: 1px solid #c4c4c4;
+    border: 1px solid #00C86C;
     height: 150px;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     width: 150px;
 }
 
@@ -132,6 +129,7 @@ ul.sidebar-nav {
     height: 150px;
     vertical-align: middle;
     width: 150px;
+    border-radius: 50%;
 }
 
 .profile-name {
@@ -166,12 +164,16 @@ ul.sidebar-nav {
     border-bottom: 1px solid #c4c4c4;
 }
 
+span.description {
+    float: right;
+}
+
 @media (min-width: 768px) {
     .profile-wrapper {
         background-color: #00c853;
         height: 100%;
         position: fixed;
-        padding:0 60px;
+        padding: 0 60px;
     }
 
     .profile-description {
@@ -193,7 +195,6 @@ ul.sidebar-nav {
         display: block;
     }
 }
-
 
 /*profile page css ends here*/
 

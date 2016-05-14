@@ -3,9 +3,12 @@
  */
 
 export class User {
-  fullName: string;
-
-  constructor(user: any){
-    this.fullName = user && user['full_name'];
-  }
+    fullName:string;
+    userName:string;
+    bio:string;
+    website:string;
+    profilePicture:string;
+    followersCount:number;
+    followingCount:number;
+    mediaCount:number;
 }

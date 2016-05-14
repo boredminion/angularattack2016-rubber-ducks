@@ -1,0 +1,49 @@
+<body>
+<my-header></my-header>
+<div class="profile-container">
+    <div class="container">
+        <div class="row">
+            <div>
+                <div class="profile-wrapper">
+                    <div class="info">
+                        <div class="profile-pic">
+                            <img src="{{user.profilePicture}}">
+                        </div>
+                        <div class="profile-name">
+                            <span>{{user.fullName}}</span>
+                            <span>@{{user.userName}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-description">
+                    <div class="profile-description-wrapper">
+                        <div class="description-profile">
+                            <span class="profile-option">Name:</span>
+                            <span class="description"> {{user.fullName}}</span>
+                        </div>
+                        <div class="description-profile">
+                            <span class="profile-option">Followed By:</span>
+                            <span class="description"> {{user.followersCount}}</span>
+                        </div>
+                        <div class="description-profile">
+                            <span class="profile-option">Following:</span>
+                            <span class="description"> {{user.followingCount}}</span>
+                        </div>
+                        <div class="description-profile">
+                            <span class="profile-option">Total Posts On Instagram:</span>
+                            <span class="description"> {{user.mediaCount}}</span>
+                        </div>
+                        <div class="description-profile">
+                            <span class="profile-option">Instagram Profile:</span>
+                            <span class="description"><a href="https://www.instagram.com/{{user.userName}}">www.instagram.com/{{user.userName}}</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    hawa
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,21 +1,16 @@
-///<reference path="../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
-/**
- * Created by pratishshr on 5/14/16.
- */
-
 import {Component, OnInit} from '@angular/core';
-
-//Services
-import {UserService} from '../../services/instagram/UserService';
+import {HeaderComponent} from "./../header/header.component.ts";
 import {User} from "../../models/UserModel";
-import {JSONP_PROVIDERS}  from '@angular/http';
+import {UserService} from "../../services/instagram/UserService";
+
 
 @Component({
-    selector: 'log-in',
-    template: require('../../views/login/login.html'),
-    providers: [JSONP_PROVIDERS]
+    selector: 'my-profile',
+    template: require('../../views/profile/profile.component.html'),
+    directives: [HeaderComponent]
+    /*styles: [require('../../../node_modules/ng2-material/components/card')]*/
 })
-export class LoginComponent implements OnInit {
+export class ProfileComponent implements OnInit {
     user:User;
     errorMessage:string;
 
@@ -28,24 +23,26 @@ export class LoginComponent implements OnInit {
         if (window.localStorage.getItem('ducky_access_token')) {
             this.getUserInfo();
         }
+        else {
+        }
     }
 
     getUserInfo() {
         this.userService.getUserInfo()
             .subscribe(
                 (user) => {
-                    this.user = user;
                     this.user.fullName = user['full_name'];
                     this.user.userName = user['username'];
                     this.user.bio = user['bio'];
                     this.user.profilePicture = user['profile_picture'];
                     this.user.website = user['website'];
+                    this.user.followersCount = user['counts']['followed_by'];
+                    this.user.followingCount = user['counts']['follows'];
+                    this.user.mediaCount = user['counts']['media'];
                 },
                 (error) => {
                     this.errorMessage = <any>error
                 }
             );
     }
-
-
 }
