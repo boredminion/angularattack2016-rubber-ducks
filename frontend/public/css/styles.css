@@ -4,9 +4,6 @@
     clear:both;
 }
 /*profile page css begins here*/
-.profile-container{
-    background-color: #FFF;
-}
 .profile-wrapper {
     background-color: #00c853;
     padding:10px 0;
@@ -45,7 +42,7 @@
     border-radius: 20px;
     margin: 10px;
     padding: 20px;
-    background-color:#f7f8f9;
+    background-color:#fff;
 }
 
 .profile-description-wrapper span{

@@ -8,6 +8,7 @@ import '../../public/css/styles.css';
 
 //components
 import {LoginComponent} from './components/login/login.component';
+import {HeaderComponent} from './components/header/header.component';
 
 @Component({
     selector: 'my-app',
@@ -24,9 +25,16 @@ import {LoginComponent} from './components/login/login.component';
         useAsDefault: true
     },
     {
+
         path: '/profile',
         name: 'Profile',
         component: ProfileComponent,
+    },
+    {
+        path: '/header',
+        name: 'Header',
+        component: HeaderComponent
+
     }
 ])
 export class AppComponent implements OnInit{
