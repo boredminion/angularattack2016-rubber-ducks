@@ -12,8 +12,8 @@ import {HeaderComponent} from './components/header/header.component';
 
 @Component({
     selector: 'my-app',
-    template: require('../../src/app/views/profile.component.html'),
-    /*styles: [require('./app.component.css')],*/
+    template: require('./app.component.html'),
+    styles: [require('./app.component.css')],
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS]
 })
