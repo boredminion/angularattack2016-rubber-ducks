@@ -8,12 +8,14 @@ import '../../public/css/styles.css';
 
 //components
 import {LoginComponent} from './components/login/login.component';
+import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
 import {HeaderComponent} from './components/header/header.component';
 
 @Component({
     selector: 'my-app',
     template: require('./app.component.html'),
     styles: [require('./app.component.css')],
+
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS]
 })
@@ -23,6 +25,10 @@ import {HeaderComponent} from './components/header/header.component';
         name: 'Login',
         component: LoginComponent,
         useAsDefault: true
+    }, {
+        path: '/searchresult',
+        name: 'Search Result',
+        component: SearchResultComponent
     },
     {
 
@@ -37,11 +43,12 @@ import {HeaderComponent} from './components/header/header.component';
 
     }
 ])
-export class AppComponent implements OnInit{
-    constructor ( private  router: Router){}
+export class AppComponent implements OnInit {
+    constructor(private  router:Router) {
+    }
 
     ngOnInit() {
-        if(window.location.hash) {
+        if (window.location.hash) {
             let hash = window.location.hash.split('=')[1];
             window.localStorage.setItem('ducky_access_token', hash);
         }
