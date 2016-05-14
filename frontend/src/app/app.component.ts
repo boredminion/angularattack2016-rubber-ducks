@@ -5,14 +5,15 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular
 
 import '../../public/css/styles.css';
 
+
 //components
 import {LoginComponent} from './components/login/login.component';
 import {HeaderComponent} from './components/header/header.component';
 
 @Component({
     selector: 'my-app',
-    template: require('./app.component.html'),
-    styles: [require('./app.component.css')],
+    template: require('../../src/app/views/profile.component.html'),
+    /*styles: [require('./app.component.css')],*/
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS]
 })
