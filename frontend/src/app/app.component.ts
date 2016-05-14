@@ -15,6 +15,7 @@ import {UserService} from './services/instagram/UserService';
 import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 
+
 @Component({
     selector: 'my-app',
     template: require('./app.component.html'),
@@ -30,8 +31,8 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
         component: LoginComponent,
         useAsDefault: true
     }, {
-        path: '/searchresult',
-        name: 'Search Result',
+        path: '/search-results',
+        name: 'Search Results',
         component: SearchResultComponent
     },
     {
