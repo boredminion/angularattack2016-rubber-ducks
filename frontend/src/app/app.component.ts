@@ -13,7 +13,7 @@ import { JSONP_PROVIDERS }  from '@angular/http';
 //services
 import {UserService} from './services/instagram/UserService';
 import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
-import {HeaderComponent} from './components/header/header.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
 
 @Component({
     selector: 'my-app',
@@ -35,7 +35,6 @@ import {HeaderComponent} from './components/header/header.component';
         component: SearchResultComponent
     },
     {
-
         path: '/profile',
         name: 'Profile',
         component: ProfileComponent,
@@ -47,9 +46,9 @@ import {HeaderComponent} from './components/header/header.component';
 
     },
     {
-        path: '/header',
-        name: 'Header',
-        component: HeaderComponent
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: DashboardComponent
     }
 ])
 export class AppComponent implements OnInit {
