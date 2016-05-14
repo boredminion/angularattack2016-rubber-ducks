@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit{
     }
 
     getUserInfo() {
-        console.log(this.user);
         this.userService.getUserInfo()
             .subscribe(
                 (user) => {this.user = new User(user)},
