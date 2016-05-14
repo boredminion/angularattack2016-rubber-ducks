@@ -2,7 +2,7 @@
 //angular dependencies
 import {Component, OnInit} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-
+import {ProfileComponent} from './components/profile.component';
 import '../../public/css/styles.css';
 
 
@@ -11,8 +11,8 @@ import {LoginComponent} from './components/login/login.component';
 
 @Component({
     selector: 'my-app',
-    template: require('../../src/app/views/profile.component.html'),
-    /*styles: [require('./app.component.css')],*/
+    template: require('./app.component.html'),
+    styles: [require('./app.component.css')],
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS]
 })
@@ -23,6 +23,11 @@ import {LoginComponent} from './components/login/login.component';
         component: LoginComponent,
         useAsDefault: true
     },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: ProfileComponent,
+    }
 ])
 export class AppComponent implements OnInit{
     constructor ( private  router: Router){}

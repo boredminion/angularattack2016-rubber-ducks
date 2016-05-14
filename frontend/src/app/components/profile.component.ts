@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 
 
 @Component({
-    selector:'',
+    selector:'my-profile',
     template:require('../views/profile.component.html'),
-    styles: [require('../../../node_modules/ng2-material/components/card')]
+    /*styles: [require('../../../node_modules/ng2-material/components/card')]*/
 })
-export class Profile{
+export class ProfileComponent{
     
 }

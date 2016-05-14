@@ -1,12 +1,19 @@
+*:after{
+    display:block;
+    content:"";
+    clear:both;
+}
 /*profile page css begins here*/
 .profile-container{
-    background-color: #00aa9a;
+    background-color: #FFF;
 }
 .profile-wrapper {
     background-color: #00c853;
+    padding:10px 0;
 }
 .profile-description{
-    background-color: #00acc1;
+    padding:15px 0;
+    width:100%;
 }
 .profile-pic{
     border-radius: 50%;
@@ -24,10 +31,54 @@
 
 .profile-name{
     text-align:center;
+    font-size: 18px;
 }
 
 .profile-name span{
     display: block;
+}
+
+.profile-description-wrapper {
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #c4c4c4;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+    background-color:#f7f8f9;
+}
+
+.profile-description-wrapper span{
+    display:block;
+}
+
+.profile-option{
+    float: left;
+}
+
+.description-profile {
+    padding: 20px 0;
+    border-bottom:1px solid #c4c4c4;
+}
+
+@media (min-width:768px) {
+    .profile-wrapper {
+        background-color: #00c853;
+        height: 100%;
+        position: fixed;
+        width: 25%;
+    }
+
+    .profile-description {
+        float: right;
+        padding: 15px 0;
+        width: 75%;
+    }
+
+    .profile-description-wrapper{
+        margin: 50px;
+        padding: 40px;
+    }
 }
 /*profile page css ends here*/
 
