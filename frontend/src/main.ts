@@ -1,8 +1,12 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { AppComponent } from './app';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {enableProdMode} from '@angular/core';
+import {AppComponent} from './app';
+
+//providers
+import {HTTP_PROVIDERS} from '@angular/http';
+
 if (process.env.ENV === 'production') {
-  enableProdMode();
+    enableProdMode();
 }
-bootstrap(AppComponent, []);
+bootstrap(AppComponent, [HTTP_PROVIDERS]);
 
