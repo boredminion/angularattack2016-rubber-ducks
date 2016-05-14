@@ -16,12 +16,11 @@ import { JSONP_PROVIDERS }  from '@angular/http';
     providers: [JSONP_PROVIDERS]
 })
 export class LoginComponent implements OnInit{
-    user: string;
+    user: User;
     errorMessage: string;
 
     constructor (private userService: UserService) {}
     ngOnInit() {
-        this.user = 'Pratish';
         if(window.localStorage.getItem('ducky_access_token')) {
             this.getUserInfo();
         }
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit{
         console.log(this.user);
         this.userService.getUserInfo()
             .subscribe(
-                (user) => {this.user = user.full_name},
+                (user) => {this.user = new User(user)},
                 (error) => {this.errorMessage = <any>error}
             );
     }

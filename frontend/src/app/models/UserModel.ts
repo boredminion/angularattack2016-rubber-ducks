@@ -6,6 +6,6 @@ export class User {
   fullName: string;
 
   constructor(user: any){
-    this.fullName = user && user.full_name;
+    this.fullName = user && user['full_name'];
   }
 }
