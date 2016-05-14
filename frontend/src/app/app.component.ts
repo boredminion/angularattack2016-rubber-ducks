@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import '../../public/css/styles.css';
-import {Test} from "./components/test.component";
+
 @Component({
   selector: 'my-app',
-  template: require('./app.component.html'),
-  styles: [require('./app.component.css')],
-  directives: [Test]
+  template: require('../../src/app/views/profile.component.html')
+  /*styles: [require('./app.component.css')],*/
+
 })
 export class AppComponent { }
 
