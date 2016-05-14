@@ -3,6 +3,9 @@
  */
 
 export class User {
-    constructor (public name: string) {
-    }
+  fullName: string;
+
+  constructor(user: any){
+    this.fullName = user && user.full_name;
+  }
 }

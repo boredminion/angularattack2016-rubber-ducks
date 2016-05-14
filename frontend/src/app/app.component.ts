@@ -8,7 +8,7 @@ import '../../public/css/styles.css';
 //components
 import {LoginComponent} from './components/login/login.component';
 import {SearchTagsComponent} from './components/search/tags/searchTags.component';
-
+import { JSONP_PROVIDERS }  from '@angular/http';
 //services
 import {UserService} from './services/instagram/UserService';
 
@@ -17,7 +17,7 @@ import {UserService} from './services/instagram/UserService';
     template: require('./app.component.html'),
     styles: [require('./app.component.css')],
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, UserService]
+    providers: [ROUTER_PROVIDERS,JSONP_PROVIDERS, UserService]
 })
 @RouteConfig([
     {
