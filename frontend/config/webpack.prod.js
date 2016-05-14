@@ -8,7 +8,6 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
-  headers: { "Access-Control-Allow-Origin": "http://localhost:8080", "Access-Control-Allow-Credentials": "true" },
 
   output: {
     path: helpers.root('dist'),
