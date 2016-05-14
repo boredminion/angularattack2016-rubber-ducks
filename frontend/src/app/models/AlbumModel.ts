@@ -8,6 +8,7 @@ export class Album {
     description:string;
     user_id:string;
     albumCover: string;
+    photos: any;
 
     constructor(album:Album) {
         this.id = album.id;
