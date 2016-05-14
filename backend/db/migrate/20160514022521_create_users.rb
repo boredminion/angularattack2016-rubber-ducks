@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :profile_image_url
       t.string :handle
       t.string :bio
+      t.integer :instagram_id
 
       t.timestamps
     end

@@ -9,3 +9,18 @@ album1.photos.create(url: 'http://cdn.grid.fotosearch.com/CSP/CSP343/k3438395.jp
 
 
 user1.bookmarks.create(album_id: album1.id)
+
+
+1.times do |count|
+  album = user1.albums.create(name: "album #{count}", description: "this is description #{count}")
+
+  album.photos.create(url: 'http://www.pilgrimshospices.org/wp-content/uploads/Pilgrims-Hospice-Duck.jpg')
+  album.photos.create(url: 'http://images.all-free-download.com/images/graphiclarge/rubber_duck_312781.jpg')
+end
+
+3...5.times do |count|
+  album = user1.albums.create(name: "album #{count}", description: "this is description #{count}")
+
+  album.photos.create(url: 'http://cdn.grid.fotosearch.com/CSP/CSP343/k3438395.jpg')
+  album.photos.create(url: 'http://images.all-free-download.com/images/graphiclarge/rubber_duck_312781.jpg')
+end

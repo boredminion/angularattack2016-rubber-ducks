@@ -4,8 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   def index
     @albums = Album.all
-
-    render json: @albums
+    render json: @albums, include: [:photos]
   end
 
   # GET /albums/1
