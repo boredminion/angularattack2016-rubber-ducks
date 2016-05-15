@@ -1,4 +1,5 @@
 @import "mimin.css";
+@import "spinkit.css";
 
 body {
     color: #fff;
@@ -58,8 +59,8 @@ body {
     background-color: #d3d3d3;
 }
 
-.card .image-container img{
-    height:250px;
+.card .image-container img {
+    height: 250px;
 }
 
 .card:hover {
@@ -199,34 +200,6 @@ span.description {
     margin: 0;
 }
 
-@media (min-width: 768px) {
-    .profile-wrapper {
-        background-color: #00c853;
-        height: 100%;
-        position: fixed;
-        padding: 0 60px;
-    }
-
-    .profile-description {
-        float: right;
-        padding: 15px 0;
-        width: 75%;
-    }
-
-    .profile-description-wrapper {
-        margin: 50px;
-        padding: 40px;
-    }
-
-    .card {
-        float: left;
-    }
-
-    .sidebar {
-        display: block;
-    }
-}
-
 /*profile page css ends here*/
 
 /*login page css*/
@@ -257,8 +230,9 @@ span.description {
     height: 300px;
     width: auto;
 }
+/*login page css ends*/
 
-.product-grid .thumbnail p{
+.product-grid .thumbnail p {
     white-space: nowrap;
     width: 100%;
     overflow: hidden;
@@ -269,4 +243,32 @@ span.description {
 
 .white {
     color: white;
+}
+
+@media (min-width: 768px) {
+    .profile-wrapper {
+        background-color: #00c853;
+        height: 100%;
+        position: fixed;
+        padding: 0 60px;
+    }
+
+    .profile-description {
+        float: right;
+        padding: 15px 0;
+        width: 75%;
+    }
+
+    .profile-description-wrapper {
+        margin: 50px;
+        padding: 40px;
+    }
+
+    .card {
+        float: left;
+    }
+
+    .sidebar {
+        display: block;
+    }
 }

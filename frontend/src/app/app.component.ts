@@ -36,14 +36,8 @@ import {User} from './models/UserModel';
     },
     {
         path: '/search/images',
-        name: 'Search Results',
-        component: SearchImageComponent
-    },
-    {
-        path: '/search/images/:name',
         name: 'SearchImages',
         component: SearchImageComponent
-
     },
     {
         path: '/dashboard',

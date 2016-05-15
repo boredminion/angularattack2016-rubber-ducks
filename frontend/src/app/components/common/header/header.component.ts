@@ -18,7 +18,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
     providers: [HTTP_PROVIDERS, SearchService],
     directives: [FORM_DIRECTIVES,ROUTER_DIRECTIVES]
 })
-export class HeaderComponent implements AfterViewInit,OnInit{
+export class HeaderComponent implements OnInit{
 
     currentPage:string;
     showHeader:boolean;
@@ -27,10 +27,6 @@ export class HeaderComponent implements AfterViewInit,OnInit{
     user:User;
 
     constructor(public router:Router) {
-    }
-
-    ngAfterViewInit(){
-        this.currentPage = window.location.pathname;
     }
 
     ngOnInit() {
@@ -42,6 +38,7 @@ export class HeaderComponent implements AfterViewInit,OnInit{
     }
 
     onSearch(value:any) {
+        this.currentPage = window.location.pathname;
         if (this.currentPage.split('/')[1] == "dashboard") {
             this.router.navigate(['Dashboard', {name: value['tagName']}]);
         } else if (this.currentPage.split('/')[2] == "images") {

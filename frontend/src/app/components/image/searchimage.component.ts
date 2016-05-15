@@ -3,13 +3,13 @@ import {HeaderComponent} from "../common/header/header.component";
 import {RouteParams} from '@angular/router-deprecated';
 import {SearchService} from "../../services/instagram/SearchService";
 import {Post} from "../../models/Post";
-
+import {Spinner} from "../common/spinner/spinner"
 
 
 @Component({
-    selector: 'home',
+    selector: 'search-image',
     template: require('../../views/image/searchimage.component.html'),
-    directives: [HeaderComponent],
+    directives: [HeaderComponent,Spinner],
     providers: [SearchService]
 })
 export class SearchImageComponent implements OnInit {
@@ -17,6 +17,8 @@ export class SearchImageComponent implements OnInit {
     searchName:string;
     resultPosts:Post[] = [];
     postCounts:number;
+    isLoading:boolean;
+
 
     constructor(private searchService:SearchService, private routeParams:RouteParams) {
     }
@@ -24,6 +26,7 @@ export class SearchImageComponent implements OnInit {
     ngOnInit() {
         this.searchName = this.routeParams.get('name');
         if (this.searchName) {
+            this.isLoading = true;
             this.searchService.getSearchResult(this.searchName).subscribe((posts)=> {
                 posts.forEach((post)=> {
                     let resultPost = new Post();
@@ -35,6 +38,7 @@ export class SearchImageComponent implements OnInit {
                     this.resultPosts.push(resultPost);
                 });
                 this.postCounts = this.resultPosts.length;
+                this.isLoading=false;
             }, (error)=> {
                 console.log('error', error);
             });

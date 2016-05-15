@@ -26,6 +26,7 @@ import {HeaderComponent} from "../common/header/header.component";
 export class DashboardComponent {
     user:User;
     albums:Album[] = [];
+    albumCount:number;
     errorMessage:string;
     isLoading:boolean;
 
@@ -46,12 +47,15 @@ export class DashboardComponent {
     }
 
     getAlbumSearchResult(tagName:string) {
+        this.isLoading = true;
         this.albumSearchService.getAlbumSearchResults(tagName).subscribe(
             (albums) => {
                 albums.forEach((album) => {
                     var newAlbum = new Album(album);
                     this.albums.push(newAlbum);
                 });
+                this.albumCount=this.albums.length;
+                this.isLoading = false;
             }, (errors)=> {
                 console.log('error', errors);
             }
@@ -80,6 +84,7 @@ export class DashboardComponent {
                         var newAlbum = new Album(album);
                         this.albums.push(newAlbum);
                     });
+                    this.albumCount=this.albums.length;
                     this.isLoading = false;
 
                 }
