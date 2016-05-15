@@ -26,7 +26,7 @@ export class SearchResultComponent {
 
     submitData() {
         event.preventDefault();
-        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id);
+        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.model.photos );
         // debugger;
         console.log("I am triggered")
     }

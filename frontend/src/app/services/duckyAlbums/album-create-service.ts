@@ -15,15 +15,23 @@ export class AlbumCreateService {
 
     private _albumsUrl = 'http://bf9d428a.ngrok.io/albums';
 
-    addAlbum(name:string, description:string, user_id:string):Observable<Album> {
+    addAlbum(name:string, description:string, user_id:string, albumCover: string, photos:any):Observable<Album> {
         
-        let body = JSON.stringify({name: name});
+        let body = JSON.stringify({name: name, description:description, user_id:user_id, albumCover:albumCover, photos: photos});
+        console.log(body);
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-
         return this.http.post(this._albumsUrl, body, options)
-            .map(res => <Album> res.json())
+            .map(this._extractData)
             .catch(this._handleError)
+    }
+    
+    private _extractData(response:Response){
+        if (response.status < 200 || response.status >= 300) {
+            throw new Error('Response status: ' + response.status);
+        }
+        let body = response.json();
+        debugger;
     }
 
     private _handleError(error:any) {
