@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
         end
       end
     end
-    render json: collected, include: [:photos]
+    render json: collected.uniq, include: [:photos]
   end
 
   # GET /albums/1
