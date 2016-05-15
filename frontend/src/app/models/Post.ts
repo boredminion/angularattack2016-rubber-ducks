@@ -3,4 +3,5 @@ export class Post{
     link: string;
     likes: number;
     imageUrl:string;
+    profilePicture:string;
 }

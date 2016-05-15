@@ -7,11 +7,10 @@ import '../../public/css/styles.css';
 
 //components
 import {LoginComponent} from './components/login/login.component';
-import {SearchTagsComponent} from './components/search/tags/searchTags.component';
 import {JSONP_PROVIDERS}  from '@angular/http';
 //services
 import {UserService} from './services/instagram/UserService';
-import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
+import {SearchImageComponent} from './components/image/searchimage.component.ts';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {HeaderComponent} from './components/common/header/header.component';
 import {User} from './models/UserModel';
@@ -29,10 +28,6 @@ import {User} from './models/UserModel';
         name: 'Login',
         component: LoginComponent,
         useAsDefault: true
-    }, {
-        path: '/search-results',
-        name: 'Search Results',
-        component: SearchResultComponent
     },
     {
         path: '/profile',
@@ -40,9 +35,14 @@ import {User} from './models/UserModel';
         component: ProfileComponent,
     },
     {
-        path: '/search/tags',
-        name: 'SearchByTag',
-        component: SearchTagsComponent
+        path: '/search/images',
+        name: 'Search Results',
+        component: SearchImageComponent
+    },
+    {
+        path: '/search/images/:name',
+        name: 'SearchImages',
+        component: SearchImageComponent
 
     },
     {
