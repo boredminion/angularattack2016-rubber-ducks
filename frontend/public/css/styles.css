@@ -245,6 +245,12 @@ span.description {
     color: white;
 }
 
+/*detail page starts*/
+.image-description-block{
+    margin-bottom:30px;
+}
+/*detail page ends*/
+
 @media (min-width: 768px) {
     .profile-wrapper {
         background-color: #00c853;
