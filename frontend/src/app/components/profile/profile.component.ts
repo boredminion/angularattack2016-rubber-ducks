@@ -47,9 +47,7 @@ export class ProfileComponent implements OnInit {
         this.duckyUserService.fetchById('1')
             .subscribe(
                 (user) => {
-                    debugger;
                     user.albums.forEach((album) => {
-                        debugger;
                         var newAlbum = new Album(album);
                         this.albums.push(newAlbum);
                         this.isLoading = false
