@@ -4,11 +4,11 @@
         <li *ngFor="let photo of model.photos" ><img class="select-img-thumb" src="{{photo}}" alt=""></li>
     </ul>
     <div class="form-group">
-        <label >Album Name</label>
+        <label >Album Name*</label>
         <input type="text" class="form-control" required [(ngModel)]="model.name">
     </div>
     <div class="form-group">
-        <label>Description</label>
+        <label>Description*</label>
         <textarea type="text" class="form-control" required [(ngModel)]="model.description"></textarea>
     </div>
     <div class="form-group">

@@ -14,10 +14,10 @@ export class AlbumCreateService {
     }
 
     private _albumsUrl = 'https://ducky-albums.herokuapp.com/'+'albums';
-
+    // private _albumsUrl = 'http://localhost:3000/albums';
 
     addAlbum(name:string, description:string, user_id:string, albumCover: string, photos:any, tags:any):Observable<Album> {
-        
+
         let body = JSON.stringify({name: name, description:description, user_id:user_id, albumCover:albumCover, photos: photos, tags: tags});
 
         let headers = new Headers({'Content-Type': 'application/json'});

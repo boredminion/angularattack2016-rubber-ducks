@@ -32,9 +32,26 @@ export class NewAlbumComponent {
     onSubmit() {
         this.submitted = true;
         this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.selectedImages, this.model.tags).subscribe(
-            album => this.model = album,
+            album => this.model = {
+                id: '',
+                name: '',
+                description: '',
+                user_id: '1',
+                albumCover: '',
+                photos: this.selectedImages,
+                tags: ''
+            },
             error => this.errorMessage = <any>error
         );
+
+        var selectedGuys = document.getElementsByClassName('selected-image-holder');
+        var guysLength = selectedGuys.length;
+        for (var i = 1; i <= guysLength; i++) {
+            if(selectedGuys[0]){
+                selectedGuys[0].className = "card"
+            }
+        }
+        this.selectedImages = [];
     }
 
     // TODO: Remove this when we're done

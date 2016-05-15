@@ -68,6 +68,7 @@ body {
 }
 
 .sidebar {
+    min-height: 500px;
     display: none;
     position: absolute;
     top: 0;

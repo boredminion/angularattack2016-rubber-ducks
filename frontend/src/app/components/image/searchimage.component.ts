@@ -26,6 +26,10 @@ export class SearchImageComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loadImages()
+    }
+
+    public loadImages(){
         this.searchName = this.routeParams.get('name');
         if (this.searchName) {
             this.isLoading = true;
