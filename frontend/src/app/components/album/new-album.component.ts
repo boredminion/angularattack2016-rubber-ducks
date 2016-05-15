@@ -25,17 +25,16 @@ export class NewAlbumComponent {
         description: '',
         user_id: '1',
         albumCover: '',
-        photos: this.selectedImages
+        photos: this.selectedImages,
+        tags: ''
     };
 
     onSubmit() {
-        debugger;
         this.submitted = true;
-        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.selectedImages).subscribe(
+        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.selectedImages, this.model.tags).subscribe(
             album => this.model = album,
             error => this.errorMessage = <any>error
         );
-
     }
 
     // TODO: Remove this when we're done

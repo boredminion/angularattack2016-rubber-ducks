@@ -9,7 +9,11 @@
     </div>
     <div class="form-group">
         <label>Description</label>
-        <textarea type="text" class="form-control" [(ngModel)]="model.description"></textarea>
+        <textarea type="text" class="form-control" required [(ngModel)]="model.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Tags (seperate them with hastags #)</label>
+        <textarea type="text" class="form-control" [(ngModel)]="model.tags"></textarea>
     </div>
     <input type="hidden" [(ngModel)]="model.user_id">
 
