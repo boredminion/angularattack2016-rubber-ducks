@@ -33,6 +33,11 @@ export class HeaderComponent implements OnInit {
         if (localStorage.getItem('ducky_access_token')) {
             this.showHeader = true;
         }
+
+        if (window.location.pathname.split('/')[1] == "search") {
+            let searchListElementId = document.getElementById('search-id');
+            console.log(searchListElementId);
+        }
     }
 
     onSearch(value:any) {
