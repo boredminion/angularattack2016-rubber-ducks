@@ -3,6 +3,7 @@
  */
 
 export class User {
+
   id: string;
   fullName: string;
   bio: string;
