@@ -19,6 +19,7 @@ export class SearchImageComponent implements OnInit {
     resultPosts:Post[] = [];
     postCounts:number;
     isLoading:boolean;
+    selectedImages:any = [];
 
 
     constructor(private searchService:SearchService, private routeParams:RouteParams) {
@@ -44,6 +45,16 @@ export class SearchImageComponent implements OnInit {
                 console.log('error', error);
             });
         }
+    }
+
+    toggleSelection(event: any){
+        var image = event.target;
+        this.selectedImages.push(image.src);
+        // debugger;
+    }
+
+    get selectedImageDiagnostic() {
+        return JSON.stringify(this.selectedImages);
     }
 
 

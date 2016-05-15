@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'
+import {Component, Input} from '@angular/core'
 
 import {Album} from "../../models/AlbumModel"
 import {AlbumCreateService} from '../../services/duckyAlbums/album-create-service';
@@ -12,6 +12,8 @@ import {AlbumCreateService} from '../../services/duckyAlbums/album-create-servic
 
 export class NewAlbumComponent {
 
+    @Input() selectedImages:any;
+    
     constructor(private albumCreateService:AlbumCreateService) {
     }
 
@@ -23,16 +25,13 @@ export class NewAlbumComponent {
         description: "good description",
         user_id: '1',
         albumCover: "",
-        photos: [
-            {url: "../../../../public/img/avatar.jpg"},
-            {url: "../../../../public/img/avatar.jpg"}
-        ]
+        photos: this.selectedImages
     };
 
     onSubmit() {
         debugger;
         this.submitted = true;
-        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.model.photos).subscribe(
+        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.selectedImages).subscribe(
             album => this.model = album,
             error => this.errorMessage = <any>error
         );

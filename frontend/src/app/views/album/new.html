@@ -1,7 +1,7 @@
 {{diagnostic}}
 <form (ngSubmit)="onSubmit()">
     <ul class="selected-img-holder">
-        <li *ngFor="let photo of model.photos" ><img class="select-img-thumb" src="{{photo.url}}" alt=""></li>
+        <li *ngFor="let photo of model.photos" ><img class="select-img-thumb" src="{{photo}}" alt=""></li>
     </ul>
     <div class="form-group">
         <label >Album Name</label>

@@ -1,8 +1,9 @@
 <div class="home-wrapper">
     <div class="container">
         <div class="row main-content">
+            {{selectedImageDiagnostic}}
             <div class="col-xs-12 col-sm-9 picture-cards" *ngIf="searchName!==undefined || postCounts!==0">
-                <div class="card" *ngFor="let post of resultPosts">
+                <div class="card" *ngFor="let post of resultPosts" (click)="toggleSelection($event)">
                     <p class="user-name"><img src={{post.profilePicture}}/> {{post.userName}}</p>
                     <div class="image-container"><img src={{post.imageUrl}} alt=""></div>
                     <p class="likes">Likes:{{post.likes}}</p>
@@ -19,7 +20,7 @@
                     <!--<li><a (click)="submitData()" style="cursor: pointer">Save Selected Pictures <span-->
                             <!--class="glyphicon glyphicon-save"></span></a></li>-->
                 <!--</ul>-->
-                <new-album-form></new-album-form>
+                <new-album-form [selectedImages] = "selectedImages"></new-album-form>
             </div>
         </div>
         <div class="row" *ngIf="postCounts>9 && postCount!==undefined">

@@ -34,6 +34,7 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
 
     if @album.save
+      save_photos
       render json: @album, status: :created, location: @album
     else
       render json: @album.errors, status: :unprocessable_entity
@@ -63,5 +64,14 @@ class AlbumsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def album_params
       params.require(:album).permit(:name, :description, :user_id)
+    end
+
+    # save photos
+    def save_photos
+      # binding.pry
+      image_urls = params["photos"]
+      image_urls.each do |url|
+        @album.photos.create(url: url)
+      end
     end
 end
