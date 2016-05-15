@@ -26,7 +26,6 @@ export class SearchImageComponent implements OnInit {
         if (this.searchName) {
             this.searchService.getSearchResult(this.searchName).subscribe((posts)=> {
                 posts.forEach((post)=> {
-                    console.log(post);
                     let resultPost = new Post();
                     resultPost.imageUrl = post['images']['low_resolution']['url'];
                     resultPost.likes = post['likes']['count'];

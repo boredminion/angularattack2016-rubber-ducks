@@ -7,14 +7,14 @@ export class Album {
     name:string;
     description:string;
     user_id:string;
-    albumCover: string;
-    photos: any;
+    albumCover:string;
+    photos:any;
 
     constructor(album:Album) {
         this.id = album.id;
         this.name = album.name;
         this.description = album.description;
         this.user_id = album.user_id;
-        this.albumCover = album.photos[0]['url'];
+        this.albumCover = album.photos[0] && album.photos[0]['url'];
     }
 }
