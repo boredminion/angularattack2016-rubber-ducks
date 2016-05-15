@@ -7,6 +7,23 @@ class AlbumsController < ApplicationController
     render json: @albums, include: [:photos]
   end
 
+  def search
+    query = params[:q]
+    collected = []
+    if params[:q]
+      tags = Tag.where("name LIKE ?", "%#{query}%")
+      tags.each do |tag|
+        albums = tag.albums
+        if albums.count > 0
+          tag.albums.each do |album|
+            collected.push(album)
+          end
+        end
+      end
+    end
+    render json: collected, include: [:photos]
+  end
+
   # GET /albums/1
   def show
     render json: @album, include: [:tags, :photos]

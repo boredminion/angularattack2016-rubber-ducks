@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  has_and_belongs_to_many :album
+  has_and_belongs_to_many :albums
 end
