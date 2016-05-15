@@ -4,12 +4,13 @@ import {RouteParams} from '@angular/router-deprecated';
 import {SearchService} from "../../services/instagram/SearchService";
 import {Post} from "../../models/Post";
 import {Spinner} from "../common/spinner/spinner"
+import {NewAlbumComponent} from "../album/new-album.component"
 
 
 @Component({
     selector: 'search-image',
     template: require('../../views/image/searchimage.component.html'),
-    directives: [HeaderComponent,Spinner],
+    directives: [HeaderComponent,Spinner, NewAlbumComponent],
     providers: [SearchService]
 })
 export class SearchImageComponent implements OnInit {

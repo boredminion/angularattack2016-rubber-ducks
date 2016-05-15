@@ -15,10 +15,11 @@
                 <h1>Sorry no image found for this tag! Search again</h1>
             </div>
             <div class="col-sm-3 sidebar">
-                <ul class="sidebar-nav">
-                    <li><a (click)="submitData()" style="cursor: pointer">Save Selected Pictures <span
-                            class="glyphicon glyphicon-save"></span></a></li>
-                </ul>
+                <!--<ul class="sidebar-nav">-->
+                    <!--<li><a (click)="submitData()" style="cursor: pointer">Save Selected Pictures <span-->
+                            <!--class="glyphicon glyphicon-save"></span></a></li>-->
+                <!--</ul>-->
+                <new-album-form></new-album-form>
             </div>
         </div>
         <div class="row" *ngIf="postCounts>9 && postCount!==undefined">
