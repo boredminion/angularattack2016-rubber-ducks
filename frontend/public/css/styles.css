@@ -16,6 +16,16 @@ body {
     position: relative;
 }
 
+span.glyphicon.glyphicon-log-out {
+    margin-top: 15px;
+    margin-left: 10px;
+    cursor:pointer;
+}
+
+.topnav .navbar-header li.no-animation::after {
+    display: none;
+}
+
 /*Sear result page*/
 .home-wrapper {
     width: 100%;

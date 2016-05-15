@@ -53,6 +53,11 @@ export class HeaderComponent implements OnInit,AfterViewInit {
         }
     }
 
+    logOut() {
+        localStorage.removeItem('ducky_access_token');
+        window.location.href = 'login';
+    }
+
     onSearch(value:any) {
         this.currentPage = window.location.pathname;
         if (this.currentPage.split('/')[2] == "images") {
