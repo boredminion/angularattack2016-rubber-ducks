@@ -22,6 +22,12 @@ export class AlbumService {
         //     .catch(this.handleError);
         // debugger;
         // return this.http.get(this.albumUrl)
+        //     .map(this.extractData)   // var url = this.albumUrl;
+        // return  this.jsonp.get(url)
+        //     .map(this.extractData)
+        //     .catch(this.handleError);
+        // debugger;
+        // return this.http.get(this.albumUrl)
         //     .map(this.extractData)
         //     .catch(this.handleError);
         var response =  this.http.get(this.albumUrl)

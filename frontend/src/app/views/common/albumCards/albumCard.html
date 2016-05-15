@@ -1,9 +1,14 @@
-<div class="col-sm-6 col-md-3 product-grid" *ngFor="let album of albums">
+<div class="col-sm-8 col-md-4 product-grid" *ngFor="let album of albums">
     <div class="thumbnail">
-        <img src="{{album.albumCover}}" alt="">
+        <img src="{{album.albumCover}}">
+        <div class="col-md-3">
+        </div>
+
         <div class="caption">
             <h4>{{album.name}}</h4>
             <p>{{album.description}}</p>
         </div>
     </div>
 </div>
+
+<spinner [isLoading]="isLoading"></spinner>
