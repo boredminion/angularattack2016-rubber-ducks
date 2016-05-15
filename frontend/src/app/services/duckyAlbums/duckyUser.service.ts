@@ -13,7 +13,7 @@ export class DuckyUserService {
     constructor(private http:Http) {
     }
 
-    private userUrl = 'http://ducky-albums.herokuapp.com/users';
+    private userUrl = 'https://ducky-albums.herokuapp.com//users';
 
     fetchById(id: string):Observable<DuckyUser> {
         var url = this.userUrl + '/1';
