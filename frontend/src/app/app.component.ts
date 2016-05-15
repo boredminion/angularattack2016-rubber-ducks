@@ -2,7 +2,7 @@
 //angular dependencies
 import {Component, OnInit} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-import {ProfileComponent} from './components/profile.component';
+import {ProfileComponent} from './components/profile/profile.component.ts';
 import '../../public/css/styles.css';
 
 //components

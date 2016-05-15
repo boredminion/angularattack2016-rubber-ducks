@@ -108,8 +108,6 @@ ul.sidebar-nav {
 /*Home page end*/
 
 /*profile page css begins here*/
-
-/*profile page css begins here*/
 .profile-wrapper {
     background-color: #00c853;
     padding: 10px 0;
@@ -121,10 +119,9 @@ ul.sidebar-nav {
 }
 
 .profile-pic {
-    border-radius: 50%;
-    border: 1px solid #c4c4c4;
+    border: 1px solid #00C86C;
     height: 150px;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     width: 150px;
 }
 
@@ -132,6 +129,7 @@ ul.sidebar-nav {
     height: 150px;
     vertical-align: middle;
     width: 150px;
+    border-radius: 50%;
 }
 
 .profile-name {
@@ -164,6 +162,35 @@ ul.sidebar-nav {
 .description-profile {
     padding: 20px 0;
     border-bottom: 1px solid #c4c4c4;
+}
+
+span.description {
+    float: right;
+}
+
+/*profile page css ends here*/
+
+/*login page css*/
+.grey {
+    color: grey;
+}
+
+.clear-side-pad {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.clear-side-pad img{
+    margin-right: 20px;
+}
+
+.panel-body img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.clear-margin {
+    margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -233,5 +260,4 @@ ul.sidebar-nav {
     text-align: center;
     margin: 0 auto;
 }
-
 

@@ -9,7 +9,7 @@ import {Router} from '@angular/router-deprecated';
 //Services
 import {UserService} from '../../services/instagram/UserService';
 import {User} from "../../models/UserModel";
-import { JSONP_PROVIDERS }  from '@angular/http';
+import {JSONP_PROVIDERS}  from '@angular/http';
 
 @Component({
     selector: 'log-in',
@@ -17,14 +17,15 @@ import { JSONP_PROVIDERS }  from '@angular/http';
     providers: [JSONP_PROVIDERS]
 })
 
-export class LoginComponent implements OnInit{
-    user: User;
-    errorMessage: string;
+export class LoginComponent implements OnInit {
+    user:User;
+    errorMessage:string;
 
-    constructor (private userService: UserService, public router: Router) {}
-   
+    constructor(private userService:UserService, public router:Router) {
+    }
+
     ngOnInit() {
-        if(window.localStorage.getItem('ducky_access_token')) {
+        if (window.localStorage.getItem('ducky_access_token')) {
             this.getUserInfo();
             this.router.navigate(['Dashboard']);
         }
@@ -33,8 +34,12 @@ export class LoginComponent implements OnInit{
     getUserInfo() {
         this.userService.getUserInfo()
             .subscribe(
-                (user) => {this.user = new User(user)},
-                (error) => {this.errorMessage = <any>error}
+                (user) => {
+                    this.user = new User(user);
+                },
+                (error) => {
+                    this.errorMessage = <any>error
+                }
             );
     }
 
