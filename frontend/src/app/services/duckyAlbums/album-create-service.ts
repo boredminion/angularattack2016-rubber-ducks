@@ -13,7 +13,7 @@ export class AlbumCreateService {
     constructor(private http:Http) {
     }
 
-    private _albumsUrl = 'http://bf9d428a.ngrok.io/albums';
+    private _albumsUrl = 'http://localhost:7000/albums';
 
     addAlbum(name:string, description:string, user_id:string, albumCover: string, photos:any):Observable<Album> {
         
@@ -21,6 +21,7 @@ export class AlbumCreateService {
         console.log(body);
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
+
         return this.http.post(this._albumsUrl, body, options)
             .map(this._extractData)
             .catch(this._handleError)

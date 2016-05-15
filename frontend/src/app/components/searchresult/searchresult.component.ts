@@ -14,20 +14,26 @@ export class SearchResultComponent {
 
     constructor(private albumCreateService:AlbumCreateService) {
     }
+    public errorMessage: string;
 
     public model:Album = {
         id: '2',
         name: "some name",
         description: "good description",
-        user_id: '2',
+        user_id: '1',
         albumCover: "https://myfavouriteoldthings.files.wordpress.com/2013/10/sphinx-rubber-duck1.jpg",
         photos: []
     };
 
     submitData() {
         event.preventDefault();
-        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.model.photos );
+        this.albumCreateService.addAlbum(this.model.name, this.model.description, this.model.user_id, this.model.albumCover, this.model.photos).subscribe(
+            album => this.model = album,
+            error =>  this.errorMessage = <any>error
+        );
+
         // debugger;
         console.log("I am triggered")
+        console.log(this.model)
     }
 }
