@@ -3,13 +3,13 @@
  * Created by user on 5/14/16.
  */
 
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
-import {Component} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {FORM_DIRECTIVES} from "@angular/common/src/forms/directives";
 import {SearchService} from "../../../services/instagram/SearchService";
-import {SearchTagsComponent} from '../../search/tags/searchTags.component'
+import {SearchTagsComponent} from '../../search/tags/searchTags.component';
+import {User} from '../../../models/UserModel';
 
 @Component({
     selector: 'my-header',
@@ -19,6 +19,9 @@ import {SearchTagsComponent} from '../../search/tags/searchTags.component'
 })
 export class HeaderComponent implements OnInit {
     showHeader:boolean;
+
+    @Input()
+    user:User;
 
     ngOnInit() {
         if (localStorage.getItem('ducky_access_token')) {
