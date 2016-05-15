@@ -232,6 +232,7 @@ span.description {
     height: 300px;
     width: auto;
 }
+
 /*login page css ends*/
 
 .product-grid .thumbnail p {
@@ -247,22 +248,29 @@ span.description {
     color: white;
 }
 
-.selected-img-holder{
+/*detail page starts*/
+.image-description-block {
+    margin-bottom: 30px;
+}
+
+/*detail page ends*/
+.selected-img-holder {
     margin: 10px 0px;
 }
-.selected-img-holder li{
-    width:50px;
+
+.selected-img-holder li {
+    width: 50px;
     height: 50px;
     float: left;
-    margin-right:10px
+    margin-right: 10px
 }
 
-.select-img-thumb{
-    width:50px;
+.select-img-thumb {
+    width: 50px;
     height: 50px;
 }
 
-.selected-image-holder{
+.selected-image-holder {
     background-color: #2196f3;
 }
 

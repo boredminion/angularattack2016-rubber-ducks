@@ -14,6 +14,7 @@ import {SearchImageComponent} from './components/image/searchimage.component.ts'
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {HeaderComponent} from './components/common/header/header.component';
 import {User} from './models/UserModel';
+import {AlbumDetailComponent} from "./components/albumDetail/albumDetail.component";
 
 @Component({
     selector: 'my-app',
@@ -43,6 +44,11 @@ import {User} from './models/UserModel';
         path: '/dashboard',
         name: 'Dashboard',
         component: DashboardComponent
+    },
+    {
+        path:'/album/details',
+        name:'AlbumDetail',
+        component:AlbumDetailComponent
     }
 ])
 export class AppComponent implements OnInit {

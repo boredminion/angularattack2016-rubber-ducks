@@ -1,0 +1,24 @@
+<div class="col-md-12 col-xs-12 col-md-12 padding-0 box-v4-alert image-description-block">
+    <h2>{{selectedAlbum.name}}</h2>
+    <p>{{selectedAlbum.description}}</p>
+    <b><span class="icon-clock icons" *ngFor="let tag of selectedAlbum.tags; let i = index"
+             style="display:inline-block;padding: 0 5px;"><a [routerLink]="['Dashboard',{name:tag.name}]"
+                                                             style="display:inline-block;">#{{tag.name}}</a><span
+            *ngIf="selectedAlbum.tags.length!=i+1">,</span></span> </b>
+</div>
+<div class="col-xs-12 col-md-4" *ngFor="let photo of selectedAlbum.photos">
+    <div class="col-md-12 padding-0 photo-description-block">
+        <div class="panel box-v2">
+            <div class="panel-heading padding-0">
+                <img src={{photo.url}} class="box-v2-cover img-responsive"
+                     style="height:440px;width: 440px; margin:0 auto;">
+            </div>
+            <div class="panel-body" style="background:#2196F3;">
+                <div class="col-xs-12 col-md-12 padding-0 text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<spinner [isLoading]="isLoading"></spinner>

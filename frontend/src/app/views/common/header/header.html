@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default header navbar-fixed-top" *ngIf='showHeader==true'>
     <div class="col-md-12 nav-wrapper">
         <div class="navbar-header" style="width:100%;">
-            <a [routerLink]="['Dashboard']" class="navbar-brand">
+            <a [routerLink]="['Dashboard']" class="navbar-brand" (click)="changeActiveBar('dashboard')">
                 <b>Ducky Albums</b>
             </a>
             <ul class="nav navbar-nav search-nav">
-                <li class=""> <a [routerLink]="['Dashboard']" >Dashboard</a></li>
-                <li class=""> <a [routerLink]="['SearchImages']"> Browse Pictures</a></li>
+                <li class="active" (click)="changeActiveBar('dashboard')" id="dashboard"> <a [routerLink]="['Dashboard']" >Dashboard</a></li>
+                <li class="" (click)="changeActiveBar('search-tag')" id="search-tag"> <a [routerLink]="['SearchImages']"> Browse Pictures</a></li>
                 <li>
                     <div class="search">
                         <span class="glyphicon glyphicon-search icon-search" style="font-size:23px;"></span>
@@ -28,7 +28,7 @@
                 <li class="dropdown avatar-dropdown">
                     <img src="{{user && user.profilePicture}}" class="img-circle avatar" alt="user name"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
-
+                
                     <ul class="dropdown-menu user-dropdown">
                         <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
                         <li><a href="#"><span class="fa fa-calendar"></span> My Calendar</a></li>

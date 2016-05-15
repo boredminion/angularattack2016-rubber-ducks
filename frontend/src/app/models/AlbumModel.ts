@@ -17,5 +17,6 @@ export class Album {
         this.description = album.description;
         this.user_id = album.user_id;
         this.albumCover = album.photos[0] && album.photos[0]['url'];
+        this.photos = album.photos;
     }
 }
