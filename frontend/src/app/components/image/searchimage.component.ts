@@ -45,5 +45,10 @@ export class SearchImageComponent implements OnInit {
         }
     }
 
+    clicked(album:Post){
+        // console.log('clicked');
+        // console.log(JSON.stringify(album));
+    }
+
 
 }

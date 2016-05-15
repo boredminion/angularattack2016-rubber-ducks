@@ -8,7 +8,7 @@ export class Album {
     description:string;
     user_id:string;
     albumCover:string;
-    photos:any;
+    photos:any[];
 
     constructor(album:Album) {
         this.id = album.id;
@@ -16,5 +16,6 @@ export class Album {
         this.description = album.description;
         this.user_id = album.user_id;
         this.albumCover = album.photos[0] && album.photos[0]['url'];
+        this.photos = album.photos;
     }
 }

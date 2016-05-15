@@ -29,6 +29,7 @@ export class DashboardComponent {
     albumCount:number;
     errorMessage:string;
     isLoading:boolean;
+    selectedAlbum:Album;
 
     constructor(private userService:UserService, private albumService:AlbumService, private albumSearchService:AlbumSearchService, private routeParams:RouteParams) {
     }
@@ -81,6 +82,7 @@ export class DashboardComponent {
             .subscribe(
                 (albums) => {
                     albums.forEach((album) => {
+                        console.log(album);
                         var newAlbum = new Album(album);
                         this.albums.push(newAlbum);
                     });

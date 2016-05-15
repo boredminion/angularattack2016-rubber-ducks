@@ -16,5 +16,12 @@ export class AlbumCardComponent{
     public isLoading: boolean;
     @Input()
     public albums: Album[];
+
+    clicked(album:Album){
+        console.log('clicked');
+        console.log(JSON.stringify(album));
+        
+
+    }
 }
 
