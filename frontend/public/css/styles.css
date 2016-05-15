@@ -68,6 +68,7 @@ body {
 }
 
 .sidebar {
+    min-height: 500px;
     display: none;
     position: absolute;
     top: 0;
@@ -230,6 +231,7 @@ span.description {
     height: 300px;
     width: auto;
 }
+
 /*login page css ends*/
 
 .product-grid .thumbnail p {
@@ -246,10 +248,30 @@ span.description {
 }
 
 /*detail page starts*/
-.image-description-block{
-    margin-bottom:30px;
+.image-description-block {
+    margin-bottom: 30px;
 }
+
 /*detail page ends*/
+.selected-img-holder {
+    margin: 10px 0px;
+}
+
+.selected-img-holder li {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px
+}
+
+.select-img-thumb {
+    width: 50px;
+    height: 50px;
+}
+
+.selected-image-holder {
+    background-color: #2196f3;
+}
 
 @media (min-width: 768px) {
     .profile-wrapper {

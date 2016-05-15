@@ -4,7 +4,7 @@
  */
 
 
-import {Component, AfterViewInit, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, AfterViewInit} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {FORM_DIRECTIVES} from "@angular/common/src/forms/directives";
 import {Router} from '@angular/router-deprecated';
@@ -18,7 +18,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
     providers: [HTTP_PROVIDERS, SearchService],
     directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,AfterViewInit {
 
     currentPage:string;
     showHeader:boolean = false;
@@ -33,10 +33,23 @@ export class HeaderComponent implements OnInit {
         if (localStorage.getItem('ducky_access_token')) {
             this.showHeader = true;
         }
+    }
 
-        if (window.location.pathname.split('/')[1] == "search") {
-            let searchListElementId = document.getElementById('search-id');
-            console.log(searchListElementId);
+    ngAfterViewInit() {
+        if (window.location.pathname.split('/')[1] == 'search') {
+            this.changeActiveBar('search-tag');
+        } else if (window.location.pathname.split('/')[1] == 'dashboard') {
+            this.changeActiveBar('dashboard');
+        }
+    }
+
+    changeActiveBar(elementId:string) {
+        if (elementId == 'search-tag') {
+            document.getElementById(elementId).className = 'active';
+            document.getElementById('dashboard').className = '';
+        } else {
+            document.getElementById(elementId).className = 'active';
+            document.getElementById('search-tag').className = '';
         }
     }
 

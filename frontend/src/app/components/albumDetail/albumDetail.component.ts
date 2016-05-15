@@ -3,7 +3,7 @@ import {RouteParams} from "@angular/router-deprecated";
 import {AlbumSearchService} from "../../services/duckyAlbums/albumSearch.service";
 import {Spinner} from "../common/spinner/spinner";
 import {HeaderComponent} from "../common/header/header.component";
-import {Test} from "../../models/test";
+import {Test} from "../../models/SelectedAlbum";
 import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 @Component({
