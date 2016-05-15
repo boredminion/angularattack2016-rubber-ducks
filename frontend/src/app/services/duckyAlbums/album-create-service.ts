@@ -16,9 +16,9 @@ export class AlbumCreateService {
     private _albumsUrl = 'http://localhost:7000/albums';
 
     addAlbum(name:string, description:string, user_id:string, albumCover: string, photos:any):Observable<Album> {
-        
 
-        let body = JSON.stringify({name: name, description: description, user_id: user_id});
+
+        let body = JSON.stringify({name: name, description:description, user_id:user_id, albumCover:albumCover, photos: photos});
 
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
