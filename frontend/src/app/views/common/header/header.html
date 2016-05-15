@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default header navbar-fixed-top" *ngIf='showHeader==true'>
     <div class="col-md-12 nav-wrapper">
         <div class="navbar-header" style="width:100%;">
-            <a href="" class="navbar-brand">
+            <a [routerLink]="['Dashboard']" class="navbar-brand">
                 <b>Ducky Albums</b>
             </a>
             <ul class="nav navbar-nav search-nav">
@@ -16,7 +16,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>{{user && user.fullName}}</span></li>
+                <li class="user-name"><span><a [routerLink]="['Profile']">{{user && user.fullName}}</a></span></li>
                 <li class="dropdown avatar-dropdown">
                     <img src="{{user && user.profilePicture}}" class="img-circle avatar" alt="user name"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
