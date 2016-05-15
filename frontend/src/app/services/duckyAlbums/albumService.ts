@@ -13,7 +13,7 @@ export class AlbumService {
     constructor(private http:Http) {
     }
 
-    private userUrl = 'http://bf9d428a.ngrok.io/albums';
+    private userUrl = 'http://ducky-albums.herokuapp.com/albums';
 
     fetch():Observable<Album[]> {
         var url = this.userUrl;
