@@ -284,6 +284,22 @@ span.description {
     background-color: #2196f3;
 }
 
+.romit-album{
+    box-shadow: 10px -5px 8px rgba(153, 153, 153, 0.42);
+}
+
+.romit-album:hover{
+    box-shadow: 10px -5px 8px rgba(153, 153, 153, 0.71);
+}
+
+.single-image{
+    border: #fff 5px solid;
+}
+
+.single-image:hover{
+    box-shadow: 10px -5px 8px rgba(153, 153, 153, 0.42);
+}
+
 @media (min-width: 768px) {
     .profile-wrapper {
         background-color: #00c853;
