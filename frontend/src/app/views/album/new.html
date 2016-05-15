@@ -1,0 +1,21 @@
+{{diagnostic}}
+<form (ngSubmit)="onSubmit()">
+    <ul class="selected-img-holder">
+        <li *ngFor="let photo of model.photos" ><img class="select-img-thumb" src="{{photo}}" alt=""></li>
+    </ul>
+    <div class="form-group">
+        <label >Album Name*</label>
+        <input type="text" class="form-control" required [(ngModel)]="model.name">
+    </div>
+    <div class="form-group">
+        <label>Description*</label>
+        <textarea type="text" class="form-control" required [(ngModel)]="model.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Tags (seperate them with hastags #)</label>
+        <textarea type="text" class="form-control" [(ngModel)]="model.tags"></textarea>
+    </div>
+    <input type="hidden" [(ngModel)]="model.user_id">
+
+    <button type="submit" class="btn btn-default">Save Selected Pictures <span class="glyphicon glyphicon-save"></span></button>
+</form>
