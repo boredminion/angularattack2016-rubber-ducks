@@ -30,7 +30,6 @@ export class AlbumDetailComponent implements OnInit {
     getAlbumDetail(albumId:string) {
         this.isLoading = true;
         this.albumSearchService.getAlbumDetail(albumId).subscribe((album)=> {
-            console.log(album);
                 this.selectedAlbum.id = album.id;
                 this.selectedAlbum.name = album.name;
                 this.selectedAlbum.description = album.description;

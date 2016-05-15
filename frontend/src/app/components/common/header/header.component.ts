@@ -21,7 +21,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 export class HeaderComponent implements OnInit {
 
     currentPage:string;
-    showHeader:boolean;
+    showHeader:boolean = false;
 
     @Input()
     user:User;
@@ -32,8 +32,6 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         if (localStorage.getItem('ducky_access_token')) {
             this.showHeader = true;
-        } else {
-            this.showHeader = false;
         }
     }
 
