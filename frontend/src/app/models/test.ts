@@ -5,4 +5,5 @@ export class Test {
     user_id:string;
     albumCover:string;
     photos:any[];
+    tags:any[];
 }
