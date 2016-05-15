@@ -1,1 +1,9 @@
-<input type="text" placeholder="search" />
+<div class="form-group form-animate-text">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="ui form">
+        <div class="field">
+            <input type="text" class="form-text" id="search-option" ngControl="searchParam"/>
+        </div>
+        <button type="submit" class="ui button">Submit</button>
+    </form>
+    <span class="bar"></span>    
+</div>
