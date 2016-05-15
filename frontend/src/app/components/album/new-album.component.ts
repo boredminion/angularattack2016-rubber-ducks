@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core'
+import {ToasterContainerComponent, ToasterService} from 'angular2-toaster/angular2-toaster';
 
 import {Album} from "../../models/AlbumModel"
 import {AlbumCreateService} from '../../services/duckyAlbums/album-create-service';
@@ -6,15 +7,18 @@ import {AlbumCreateService} from '../../services/duckyAlbums/album-create-servic
 @Component({
     selector: 'new-album-form',
     template: require('../../views/album/new.html'),
-    directives: [],
-    providers: [AlbumCreateService]
+    directives: [ToasterContainerComponent],
+    providers: [AlbumCreateService, ToasterService]
 })
 
 export class NewAlbumComponent {
 
     @Input() selectedImages:any;
 
-    constructor(private albumCreateService:AlbumCreateService) {
+    private toasterService: ToasterService;
+
+    constructor(private albumCreateService:AlbumCreateService, toasterService: ToasterService) {
+        this.toasterService = toasterService;
     }
 
     public errorMessage:string;
@@ -43,7 +47,7 @@ export class NewAlbumComponent {
             },
             error => this.errorMessage = <any>error
         );
-
+        this.toasterService.pop('success', 'Success!', 'Album Created Successfully');
         var selectedGuys = document.getElementsByClassName('selected-image-holder');
         var guysLength = selectedGuys.length;
         for (var i = 1; i <= guysLength; i++) {
