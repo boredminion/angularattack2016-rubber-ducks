@@ -13,6 +13,7 @@ export class AlbumSearchService{
 
     getAlbumSearchResults(tagName:string):Observable<Album[]>{
         var searchResult = 'http://ducky-albums.herokuapp.com/albums/search?q='+tagName;
+
         return this.http.get(searchResult)
             .map(this.extractData)
             .catch(this.handleError);
