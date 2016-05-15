@@ -17,7 +17,13 @@ export class LoginComponent implements OnInit {
     errorMessage:string;
     validUser:boolean = false;
 
+    appUrl:string;
+    instagramUrl:string;
+
     constructor(public router:Router) {
+        this.appUrl = window.location.host;
+        this.instagramUrl = `https://www.instagram.com/oauth/authorize/?client_id=e9b3606d89314de8ab297d5433fa6d2a&redirect_uri=http://${this.appUrl}/login/&response_type=token&scope=basic+public_content+likes`
+
     }
 
     ngOnInit() {
