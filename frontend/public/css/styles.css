@@ -168,6 +168,31 @@ span.description {
     float: right;
 }
 
+/*profile page css ends here*/
+
+/*login page css*/
+.grey {
+    color: grey;
+}
+
+.clear-side-pad {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.clear-side-pad img{
+    margin-right: 20px;
+}
+
+.panel-body img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.clear-margin {
+    margin: 0;
+}
+
 @media (min-width: 768px) {
     .profile-wrapper {
         background-color: #00c853;
@@ -195,10 +220,3 @@ span.description {
         display: block;
     }
 }
-
-/*profile page css ends here*/
-
-
-
-
-

@@ -4,6 +4,7 @@
  */
 
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router-deprecated';
 
 //Services
 import {UserService} from '../../services/instagram/UserService';
@@ -15,18 +16,18 @@ import {JSONP_PROVIDERS}  from '@angular/http';
     template: require('../../views/login/login.html'),
     providers: [JSONP_PROVIDERS]
 })
+
 export class LoginComponent implements OnInit {
     user:User;
     errorMessage:string;
 
-    constructor(private userService:UserService) {
-
+    constructor(private userService:UserService, public router:Router) {
     }
 
     ngOnInit() {
-        this.user = new User();
         if (window.localStorage.getItem('ducky_access_token')) {
             this.getUserInfo();
+            this.router.navigate(['Dashboard']);
         }
     }
 
@@ -34,12 +35,7 @@ export class LoginComponent implements OnInit {
         this.userService.getUserInfo()
             .subscribe(
                 (user) => {
-                    this.user = user;
-                    this.user.fullName = user['full_name'];
-                    this.user.userName = user['username'];
-                    this.user.bio = user['bio'];
-                    this.user.profilePicture = user['profile_picture'];
-                    this.user.website = user['website'];
+                    this.user = new User(user);
                 },
                 (error) => {
                     this.errorMessage = <any>error
