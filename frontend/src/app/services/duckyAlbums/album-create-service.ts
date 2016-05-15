@@ -13,7 +13,7 @@ export class AlbumCreateService {
     constructor(private http:Http) {
     }
 
-    private _albumsUrl = 'http://localhost:7000/albums';
+    private _albumsUrl = 'https://ducky-albums.herokuapp.com/'+'albums';
 
     addAlbum(name:string, description:string, user_id:string, albumCover: string, photos:any):Observable<Album> {
 

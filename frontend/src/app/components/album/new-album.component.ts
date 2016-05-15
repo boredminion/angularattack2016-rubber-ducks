@@ -13,7 +13,7 @@ import {AlbumCreateService} from '../../services/duckyAlbums/album-create-servic
 export class NewAlbumComponent {
 
     @Input() selectedImages:any;
-    
+
     constructor(private albumCreateService:AlbumCreateService) {
     }
 
@@ -21,10 +21,10 @@ export class NewAlbumComponent {
     private submitted = false;
     public model:Album = {
         id: '',
-        name: "some name",
-        description: "good description",
+        name: '',
+        description: '',
         user_id: '1',
-        albumCover: "",
+        albumCover: '',
         photos: this.selectedImages
     };
 
@@ -39,7 +39,7 @@ export class NewAlbumComponent {
     }
 
     // TODO: Remove this when we're done
-    get diagnostic() {
-        return JSON.stringify(this.model);
-    }
+    // get diagnostic() {
+    //     return JSON.stringify(this.model);
+    // }
 }

@@ -10,7 +10,7 @@ import {NewAlbumComponent} from "../album/new-album.component"
 @Component({
     selector: 'search-image',
     template: require('../../views/image/searchimage.component.html'),
-    directives: [HeaderComponent,Spinner, NewAlbumComponent],
+    directives: [HeaderComponent, Spinner, NewAlbumComponent],
     providers: [SearchService]
 })
 export class SearchImageComponent implements OnInit {
@@ -40,22 +40,33 @@ export class SearchImageComponent implements OnInit {
                     this.resultPosts.push(resultPost);
                 });
                 this.postCounts = this.resultPosts.length;
-                this.isLoading=false;
+                this.isLoading = false;
             }, (error)=> {
                 console.log('error', error);
             });
         }
     }
 
-    toggleSelection(event: any){
+    toggleSelection(event:any) {
         var image = event.target;
-        this.selectedImages.push(image.src);
-        // debugger;
+        var currentTarget = event.currentTarget;
+
+        if (currentTarget.className == "card") {
+            // select
+            this.selectedImages.push(image.src);
+            currentTarget.className += " selected-image-holder";
+        } else {
+            // unselect
+            var index = this.selectedImages.indexOf(image.src);
+            if (index > -1) {
+                this.selectedImages.splice(index, 1);
+            }
+            currentTarget.className = "card";
+        }
     }
 
-    get selectedImageDiagnostic() {
-        return JSON.stringify(this.selectedImages);
-    }
-
-
+    // TODO: Remove this when we're done
+    // get selectedImageDiagnostic() {
+    //     return JSON.stringify(this.selectedImages);
+    // }
 }

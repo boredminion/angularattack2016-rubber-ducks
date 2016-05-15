@@ -260,6 +260,10 @@ span.description {
     height: 50px;
 }
 
+.selected-image-holder{
+    background-color: #2196f3;
+}
+
 @media (min-width: 768px) {
     .profile-wrapper {
         background-color: #00c853;
