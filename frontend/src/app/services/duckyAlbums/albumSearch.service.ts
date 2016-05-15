@@ -12,8 +12,15 @@ export class AlbumSearchService{
 
 
     getAlbumSearchResults(tagName:string):Observable<Album[]>{
-        var searchResult = 'http://bf9d428a.ngrok.io/albums/search?q='+tagName;
+        var searchResult = 'http://ducky-albums.herokuapp.com/albums/search?q='+tagName;
         return this.http.get(searchResult)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    getAlbumDetail(userId:string):Observable<Album>{
+        var searchAlbumResult = 'http://ducky-albums.herokuapp.com/albums/'+userId;
+        return this.http.get(searchAlbumResult)
             .map(this.extractData)
             .catch(this.handleError);
     }

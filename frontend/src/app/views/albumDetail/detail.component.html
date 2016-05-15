@@ -5,14 +5,14 @@
                 <img src="#" class="box-v2-cover img-responsive">
                 <div class="box-v2-detail">
                     <img src="#" class="img-responsive">
-                    <h4>Akihiko Avaron</h4>
+                    <h4>{{selectedAlbum.name}}</h4>
                 </div>
             </div>
             <div class="panel-body">
                 <div class="col-md-12 padding-0 text-center">
                     <div class="col-md-4 col-sm-4 col-xs-6 padding-0">
-                        <h3>2.000</h3>
-                        <p>Post</p>
+                        <h3>{{selectedAlbum.id}}</h3>
+                        <p>{{isLoading}}</p>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6 padding-0">
                         <h3>2.232</h3>
@@ -27,3 +27,5 @@
         </div>
     </div>
 </div>
+
+<spinner [isLoading]="isLoading"></spinner>

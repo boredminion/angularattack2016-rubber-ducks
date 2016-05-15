@@ -20,7 +20,7 @@ import {HeaderComponent} from "../common/header/header.component";
 @Component({
     selector: 'dashboard',
     directives: [HeaderComponent, PageTitleComponent, AlbumCardComponent],
-    providers: [AlbumService,AlbumSearchService],
+    providers: [AlbumService, AlbumSearchService, UserService],
     template: require('../../views/dashboard/dashboard.html'),
 })
 export class DashboardComponent {
@@ -36,7 +36,6 @@ export class DashboardComponent {
 
     ngOnInit() {
         if (window.localStorage.getItem('ducky_access_token')) {
-            this.getUserInfo();
 
             let tagName = this.routeParams.get("name");
             if (tagName != null) {
@@ -55,7 +54,7 @@ export class DashboardComponent {
                     var newAlbum = new Album(album);
                     this.albums.push(newAlbum);
                 });
-                this.albumCount=this.albums.length;
+                this.albumCount = this.albums.length;
                 this.isLoading = false;
             }, (errors)=> {
                 console.log('error', errors);
@@ -82,13 +81,11 @@ export class DashboardComponent {
             .subscribe(
                 (albums) => {
                     albums.forEach((album) => {
-                        console.log(album);
                         var newAlbum = new Album(album);
                         this.albums.push(newAlbum);
                     });
-                    this.albumCount=this.albums.length;
+                    this.albumCount = this.albums.length;
                     this.isLoading = false;
-
                 }
             )
     }

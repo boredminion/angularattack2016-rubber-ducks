@@ -1,6 +1,6 @@
 ///<reference path="../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
 //angular dependencies
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {ProfileComponent} from './components/profile/profile.component.ts';
 import '../../public/css/styles.css';
@@ -46,13 +46,13 @@ import {AlbumDetailComponent} from "./components/albumDetail/albumDetail.compone
         component: DashboardComponent
     },
     {
-        path:'/details',
-        name:'AlbumDetails',
+        path:'/album/details',
+        name:'AlbumDetail',
         component:AlbumDetailComponent
     }
 ])
 export class AppComponent implements OnInit {
-    user:User;
+    @Input() user:User;
     errorMessage:string;
 
     constructor(private  router:Router, private userService:UserService) {
