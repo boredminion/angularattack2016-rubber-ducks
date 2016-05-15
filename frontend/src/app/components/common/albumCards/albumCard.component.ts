@@ -5,11 +5,15 @@
 import {Component, Input} from '@angular/core';
 import {Spinner} from '../spinner/spinner';
 import {Album} from '../../../models/AlbumModel';
+import { ROUTER_DIRECTIVES, Routes } from '@angular/router';
+
 
 @Component({
     selector: 'album-card',
     template: require('../../../views/common/albumCards/albumCard.html'),
-    directives: [Spinner]
+    directives: [Spinner,ROUTER_DIRECTIVES]
+
+
 })
 export class AlbumCardComponent{
     @Input()
@@ -20,7 +24,6 @@ export class AlbumCardComponent{
     clicked(album:Album){
         console.log('clicked');
         console.log(JSON.stringify(album));
-        
 
     }
 }
