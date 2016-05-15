@@ -19,8 +19,8 @@ export class SearchTagsComponent{
     constructor(private searchService:SearchService) {
     }
 
-    onSubmit(value:any) {
-        this.getResult(value['searchParam']);
+    onSearch(value:any) {
+        this.getResult(value['tagName']);
     }
 
     getResult(tagName:string) {

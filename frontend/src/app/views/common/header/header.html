@@ -6,11 +6,22 @@
                 <b>Ducky Albums</b>
             </a>
             <ul class="nav navbar-nav search-nav">
-                <li class="active"><a href="#">Album</a></li>
+                <li class="active"><a href="/dashboard">Dashboard</a></li>
+                <li class=""><a href="/search/images">Browse Pictures</a></li>
                 <li>
                     <div class="search">
                         <span class="fa fa-search icon-search"></span>
-                        <search-tags></search-tags>
+                        <div class="search">
+                            <span class="fa fa-search icon-search" style="font-size:23px;"></span>
+                            <div class="form-group form-animate-text">
+                                <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+                                    <input type="text" class="form-text" required="" ngControl="tagName">
+                                    <span class="bar"></span>
+                                    <label class="label-search">Type anywhere to <b>Search</b> </label>
+                                    <button type="submit" style="display: none">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>

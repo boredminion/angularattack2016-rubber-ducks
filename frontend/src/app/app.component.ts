@@ -8,11 +8,10 @@ import '../../public/css/styles.css';
 
 //components
 import {LoginComponent} from './components/login/login.component';
-import {SearchTagsComponent} from './components/search/tags/searchTags.component';
-import { JSONP_PROVIDERS }  from '@angular/http';
+import {JSONP_PROVIDERS}  from '@angular/http';
 //services
 import {UserService} from './services/instagram/UserService';
-import {SearchResultComponent} from './components/searchresult/searchresult.component.ts';
+import {SearchImageComponent} from './components/image/searchimage.component.ts';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 
 
@@ -22,7 +21,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
     styles: [require('./app.component.css')],
 
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS,JSONP_PROVIDERS, UserService]
+    providers: [ROUTER_PROVIDERS, JSONP_PROVIDERS, UserService]
 })
 @RouteConfig([
     {
@@ -30,10 +29,6 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
         name: 'Login',
         component: LoginComponent,
         useAsDefault: true
-    }, {
-        path: '/search-results',
-        name: 'Search Results',
-        component: SearchResultComponent
     },
     {
         path: '/profile',
@@ -41,9 +36,14 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
         component: ProfileComponent,
     },
     {
-        path: '/search/tags',
-        name: 'SearchByTag',
-        component: SearchTagsComponent
+        path: '/search/images',
+        name: 'Search Results',
+        component: SearchImageComponent
+    },
+    {
+        path: '/search/images/:name',
+        name: 'SearchImages',
+        component: SearchImageComponent
 
     },
     {

@@ -1,3 +1,5 @@
+@import "mimin.css";
+
 body {
     color: #fff;
 }
@@ -40,9 +42,9 @@ body {
     line-height: 31px;
 }
 
-.card p.album-name {
+.card p.likes {
     color: #000000;
-    font-size: large;
+    text-align: left;
     font-weight: bold;
 }
 
@@ -54,6 +56,10 @@ body {
 
 .card .image-container {
     background-color: #d3d3d3;
+}
+
+.card .image-container img{
+    height:250px;
 }
 
 .card:hover {
@@ -180,7 +186,7 @@ span.description {
     padding-left: 0;
 }
 
-.clear-side-pad img{
+.clear-side-pad img {
     margin-right: 20px;
 }
 
