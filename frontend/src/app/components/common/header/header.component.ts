@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit{
 
     onSearch(value:any) {
         this.currentPage = window.location.pathname;
-        if (this.currentPage.split('/')[1] == "dashboard") {
+        if (this.currentPage.split('/')[1] == "dashboard" ||this.currentPage.split('/')[1] == "profile") {
             this.router.navigate(['Dashboard', {name: value['tagName']}]);
         } else if (this.currentPage.split('/')[2] == "images") {
             this.router.navigate(['SearchImages', {name: value['tagName']}]);
