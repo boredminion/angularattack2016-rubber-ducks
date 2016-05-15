@@ -10,12 +10,13 @@ import {FORM_DIRECTIVES} from "@angular/common/src/forms/directives";
 import {SearchService} from "../../../services/instagram/SearchService";
 import {SearchTagsComponent} from '../../search/tags/searchTags.component';
 import {User} from '../../../models/UserModel';
+import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Component({
     selector: 'my-header',
     template: require('../../../views/common/header/header.html'),
     providers: [HTTP_PROVIDERS, SearchService],
-    directives: [FORM_DIRECTIVES, SearchTagsComponent]
+    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES, SearchTagsComponent]
 })
 export class HeaderComponent implements OnInit {
     showHeader:boolean;
