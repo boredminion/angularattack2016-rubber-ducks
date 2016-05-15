@@ -2,28 +2,32 @@ import {Component, OnInit} from '@angular/core';
 import {User} from "../../models/UserModel";
 import {UserService} from "../../services/instagram/UserService";
 import {HeaderComponent} from "../common/header/header.component";
-
+import {Album} from "../../models/AlbumModel";
+import {DuckyUserService} from "../../services/duckyAlbums/duckyUser.service";
+import {DuckyUser} from "../../models/DuckyUserModel";
+import {AlbumCardComponent} from "../../components/common/albumCards/albumCard.component";
 
 @Component({
     selector: 'my-profile',
     template: require('../../views/profile/profile.component.html'),
-    directives: [HeaderComponent]
+    directives: [HeaderComponent, AlbumCardComponent],
+    providers: [UserService, DuckyUserService]
     /*styles: [require('../../../node_modules/ng2-material/components/card')]*/
 })
 export class ProfileComponent implements OnInit {
     user:User;
+    duckyUser: DuckyUser;
     errorMessage:string;
+    albums:Album[] = [];
+    isLoading:boolean;
 
-    constructor(private userService:UserService) {
+    constructor(private userService:UserService, private duckyUserService: DuckyUserService) {
 
     }
 
     ngOnInit() {
-        if (window.localStorage.getItem('ducky_access_token')) {
-            this.getUserInfo();
-        }
-        else {
-        }
+        this.getUserInfo();
+        this.getUserAlbums();
     }
 
     getUserInfo() {
@@ -36,5 +40,19 @@ export class ProfileComponent implements OnInit {
                     this.errorMessage = <any>error
                 }
             );
+    }
+    
+    getUserAlbums() {
+        this.isLoading = true;
+        this.duckyUserService.fetchById('1')
+            .subscribe(
+                (user) => {
+                    user.albums.forEach((album) => {
+                        var newAlbum = new Album(album);
+                        this.albums.push(newAlbum);
+                        this.isLoading = false
+                    });
+                }
+            )
     }
 }

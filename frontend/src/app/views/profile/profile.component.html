@@ -1,49 +1,38 @@
-<body>
-<my-header></my-header>
-<div class="profile-container">
-    <div class="container">
-        <div class="row">
-            <div>
-                <div class="profile-wrapper">
-                    <div class="info">
-                        <div class="profile-pic">
-                            <img src="{{user.profilePicture}}">
-                        </div>
-                        <div class="profile-name">
-                            <span>{{user.fullName}}</span>
-                            <span>@{{user.userName}}</span>
-                        </div>
-                    </div>
+<div id="content" class="profile-v1">
+    <div class="col-md-12 col-sm-12 profile-v1-wrapper">
+        <div class="col-md-9  profile-v1-cover-wrap" style="padding-right:0px;">
+            <div class="profile-v1-pp">
+                <img src="{{user && user.profilePicture}}"/>
+                <h2>{{user && user.fullName}}</h2>
+                <h4 class="white">@{{user && user.username}}</h4>
+                <h4 class="white">{{user && user.bio}}</h4>
+            </div>
+            <div class="col-md-12 profile-v1-cover">
+                <img src="../../../../public/img/bg1.jpg" class="img-responsive">
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12 padding-0 profile-v1-right">
+            <div class="col-md-6 col-sm-4 profile-v1-right-wrap padding-0">
+                <div class="col-md-12 padding-0 sub-profile-v1-right text-center sub-profile-v1-right1">
+                    <h1>{{user && user.counts.followed_by}}</h1>
+                    <p>Followers</p>
                 </div>
-                <div class="profile-description">
-                    <div class="profile-description-wrapper">
-                        <div class="description-profile">
-                            <span class="profile-option">Name:</span>
-                            <span class="description"> {{user.fullName}}</span>
-                        </div>
-                        <div class="description-profile">
-                            <span class="profile-option">Followed By:</span>
-                            <span class="description"> {{user.followersCount}}</span>
-                        </div>
-                        <div class="description-profile">
-                            <span class="profile-option">Following:</span>
-                            <span class="description"> {{user.followingCount}}</span>
-                        </div>
-                        <div class="description-profile">
-                            <span class="profile-option">Total Posts On Instagram:</span>
-                            <span class="description"> {{user.mediaCount}}</span>
-                        </div>
-                        <div class="description-profile">
-                            <span class="profile-option">Instagram Profile:</span>
-                            <span class="description"><a href="https://www.instagram.com/{{user.userName}}">www.instagram.com/{{user.userName}}</a></span>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-md-6 col-sm-4 profile-v1-right-wrap padding-0">
+                <div class="col-md-12 sub-profile-v1-right text-center sub-profile-v1-right2">
+                    <h1>{{user && user.counts.follows}}</h1>
+                    <p>Following</p>
                 </div>
-                <div>
-                    hawa
+            </div>
+            <div class="col-md-12 col-sm-4 profile-v1-right-wrap padding-0">
+                <div class="col-md-12 sub-profile-v1-right text-center sub-profile-v1-right3">
+                    <h1>{{user && user.counts.media}}</h1>
+                    <p>Post</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</body>
+    <div class="col-md-12 col-sm-12 profile-v1-body">
+      <album-card [albums]="albums" [isLoading]="isLoading"></album-card>
+    </div>
+

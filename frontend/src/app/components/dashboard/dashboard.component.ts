@@ -5,16 +5,16 @@
 import {Component} from '@angular/core';
 import {RouteParams} from '@angular/router-deprecated';
 
-import {HeaderComponent} from '../common/header/header.component';
 import {PageTitleComponent} from '../common/pageTitle/pageTitle.component';
 import {AlbumCardComponent} from '../common/albumCards/albumCard.component';
 
-import {UserService} from '../../services/instagram/UserService';
 import {AlbumService} from '../../services/duckyAlbums/albumService';
 
-import {User} from '../../models/UserModel';
 import {Album} from '../../models/AlbumModel';
 import {AlbumSearchService} from "../../services/duckyAlbums/albumSearch.service";
+import {User} from "../../models/UserModel";
+import {UserService} from "../../services/instagram/UserService";
+import {HeaderComponent} from "../common/header/header.component";
 
 
 @Component({
@@ -27,6 +27,7 @@ export class DashboardComponent {
     user:User;
     albums:Album[] = [];
     errorMessage:string;
+    isLoading:boolean;
 
     constructor(private userService:UserService, private albumService:AlbumService, private albumSearchService:AlbumSearchService, private routeParams:RouteParams) {
     }
@@ -69,14 +70,18 @@ export class DashboardComponent {
             );
     }
 
+
     getAlbums() {
+        this.isLoading = true;
         this.albumService.fetch()
             .subscribe(
                 (albums) => {
                     albums.forEach((album) => {
                         var newAlbum = new Album(album);
                         this.albums.push(newAlbum);
-                    })
+                    });
+                    this.isLoading = false;
+
                 }
             )
     }

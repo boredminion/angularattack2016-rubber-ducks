@@ -3,20 +3,20 @@
  */
 
 import {Injectable} from '@angular/core';
-import {Http, Response, URLSearchParams} from '@angular/http';
+import {Http, Response} from '@angular/http';
 
-import {Album} from  '../../models/AlbumModel';
+import {DuckyUser} from  '../../models/DuckyUserModel';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class AlbumService {
+export class DuckyUserService {
     constructor(private http:Http) {
     }
 
-    private userUrl = 'http://ducky-albums.herokuapp.com/albums';
+    private userUrl = 'http://ducky-albums.herokuapp.com/users';
 
-    fetch():Observable<Album[]> {
-        var url = this.userUrl;
+    fetchById(id: string):Observable<DuckyUser> {
+        var url = this.userUrl + '/1';
         return this.http.get(url)
             .map(this.extractData)
             .catch(this.handleError);

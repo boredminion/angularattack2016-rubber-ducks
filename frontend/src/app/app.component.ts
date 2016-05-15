@@ -5,7 +5,6 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular
 import {ProfileComponent} from './components/profile/profile.component.ts';
 import '../../public/css/styles.css';
 
-
 //components
 import {LoginComponent} from './components/login/login.component';
 import {JSONP_PROVIDERS}  from '@angular/http';
@@ -13,14 +12,14 @@ import {JSONP_PROVIDERS}  from '@angular/http';
 import {UserService} from './services/instagram/UserService';
 import {SearchImageComponent} from './components/image/searchimage.component.ts';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
-
+import {HeaderComponent} from './components/common/header/header.component';
+import {User} from './models/UserModel';
 
 @Component({
     selector: 'my-app',
     template: require('./app.component.html'),
     styles: [require('./app.component.css')],
-
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, HeaderComponent],
     providers: [ROUTER_PROVIDERS, JSONP_PROVIDERS, UserService]
 })
 @RouteConfig([
@@ -53,14 +52,27 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
     }
 ])
 export class AppComponent implements OnInit {
-    constructor(private  router:Router) {
+    user:User;
+    errorMessage:string;
+
+    constructor(private  router:Router, private userService:UserService) {
     }
 
     ngOnInit() {
         if (window.location.hash) {
             let hash = window.location.hash.split('=')[1];
             window.localStorage.setItem('ducky_access_token', hash);
+        } else if(localStorage.getItem('ducky_access_token')) {
+            this.getUserInfo();
         }
+    }
+    
+    getUserInfo() {
+        this.userService.getUserInfo()
+            .subscribe(
+                (user) => {this.user = new User(user);},
+                (error) => {this.errorMessage = <any>error}
+            );
     }
 }
 
